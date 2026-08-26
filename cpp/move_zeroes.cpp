@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/move-zeroes/
 // Synced by: LinkCode
-// Date: 8/26/2026, 8:16:19 PM
+// Date: 8/26/2026, 8:16:39 PM
 // ======================================
 
 
@@ -20,7 +20,7 @@ public:
                 break;
             }
         }
-        if(zero==-1)return -1;
+        if(zero==-1)return;
         for(int i=zero+1;i<n;i++)
         {
             if(nums[i]!=0)
