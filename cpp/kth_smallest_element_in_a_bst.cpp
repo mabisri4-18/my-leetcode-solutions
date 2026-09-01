@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 // Synced by: LinkCode
-// Date: 9/1/2026, 4:39:53 PM
+// Date: 9/1/2026, 4:49:47 PM
 // ======================================
 
 
@@ -20,19 +20,24 @@
  */
 class Solution {
 public:
-    vector<int>ans;
-    void find(TreeNode* root)
+    int cnt = 0,ans = 0;
+    void find(TreeNode* root,int k)
     {
         if(root==nullptr)
         {
             return;
         }
-        find(root->left);
-        ans.push_back(root->val);
-        find(root->right);
+        find(root->left,k);
+        cnt++;
+        if(cnt==k)
+        {
+            ans = root->val;
+            return;
+        }
+        find(root->right,k);
     }
     int kthSmallest(TreeNode* root, int k) {
-        find(root);
-        return ans[k-1];
+        find(root,k);
+        return ans;
     }
 };
