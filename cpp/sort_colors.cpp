@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/sort-colors/
 // Synced by: LinkCode
-// Date: 8/23/2026, 10:35:50 PM
+// Date: 10/29/2026, 11:49:48 PM
 // ======================================
 
 
@@ -11,7 +11,7 @@ class Solution {
 public:
     void sortColors(vector<int>& nums) {
         int n = nums.size();
-        int zero = 0, two = n-1;
+        int zero = 0,two = n-1;
         int move = 0;
         while(move<=two)
         {
@@ -19,15 +19,16 @@ public:
             {
                 swap(nums[move],nums[two]);
                 two--;
+                move++;
+            }
+            else if(nums[move]==1)
+            {
+                move++;
             }
             else if(nums[move]==0)
             {
                 swap(nums[move],nums[zero]);
-                zero++,move++;
-            }
-            else
-            {
-                move++;
+                move++;zero++;
             }
         }
     }
