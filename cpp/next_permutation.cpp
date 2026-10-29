@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/next-permutation/
 // Synced by: LinkCode
-// Date: 8/24/2026, 12:25:05 AM
+// Date: 10/29/2026, 11:56:30 PM
 // ======================================
 
 
