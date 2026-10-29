@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/sort-colors/
 // Synced by: LinkCode
-// Date: 10/29/2026, 11:49:48 PM
+// Date: 10/29/2026, 11:50:14 PM
 // ======================================
 
 
@@ -19,7 +19,6 @@ public:
             {
                 swap(nums[move],nums[two]);
                 two--;
-                move++;
             }
             else if(nums[move]==1)
             {
