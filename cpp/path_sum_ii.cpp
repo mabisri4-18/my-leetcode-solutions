@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/path-sum-ii/
 // Synced by: LinkCode
-// Date: 11/12/2026, 1:21:29 AM
+// Date: 11/12/2026, 1:21:50 AM
 // ======================================
 
 
@@ -33,8 +33,8 @@ public:
     }
 
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
-        res.clear();
-        ans.clear();
+        // res.clear();
+        // ans.clear();
         func(root, targetSum);
         return res;
     }
