@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/binary-tree-maximum-path-sum/
 // Synced by: LinkCode
-// Date: 9/1/2026, 9:26:33 PM
+// Date: 11/12/2026, 3:19:15 PM
 // ======================================
 
 
@@ -29,9 +29,8 @@ public:
         }
         int l = max(0,func(root->left));
         int r = max(0,func(root->right));
-        maxi = max(root->val+l+r,maxi);
-        return max(l,r)+root->val;
-
+        maxi = max(maxi,l+r+root->val);
+        return root->val+max(l,r);
     }
     int maxPathSum(TreeNode* root) {
         func(root);
