@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 // Synced by: LinkCode
-// Date: 8/26/2026, 8:23:14 PM
+// Date: 11/16/2026, 9:54:05 PM
 // ======================================
 
 
@@ -13,14 +13,12 @@ public:
         unordered_map<int,int>mpp;
         for(int i=0;i<numbers.size();i++)
         {
-            int t = target-numbers[i];//9-2 = 7
-            if(mpp.find(t)!=mpp.end())
+            int val = target - numbers[i];
+            if(mpp.find(val)!=mpp.end())
             {
-                return {mpp[t]+1,i+1};
+                return {mpp[numbers[i]]+1,i+1};
             }
-            else{
-            mpp[numbers[i]] = i;
-            }
+            mpp[numbers[i]] = val;
         }
         return {};
     }
