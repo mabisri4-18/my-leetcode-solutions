@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/maximum-subarray/
 // Synced by: LinkCode
-// Date: 8/23/2026, 11:45:06 PM
+// Date: 11/17/2026, 2:26:56 PM
 // ======================================
 
 
@@ -11,16 +11,16 @@ class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
         int n = nums.size();
-        int sum = 0,ans = INT_MIN;
-        for(int num : nums)
+        int sum = nums[0],maxi = nums[0];
+        for(int i=1;i<n;i++)
         {
-            sum += num;
-            ans = max(ans,sum);
-            if(sum < 0)
+            if(sum<0)
             {
                 sum = 0;
             }
+            sum += nums[i];
+            maxi = max(maxi,sum);
         }
-        return ans;
+        return maxi;
     }
 };
