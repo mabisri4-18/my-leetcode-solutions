@@ -3,7 +3,7 @@
 // Language: cpp
 // Link: https://leetcode.com/problems/maximum-product-subarray/
 // Synced by: LinkCode
-// Date: 11/17/2026, 2:51:04 PM
+// Date: 11/17/2026, 2:53:05 PM
 // ======================================
 
 
@@ -11,13 +11,24 @@ class Solution {
 public:
     int maxProduct(vector<int>& nums) {
         int n = nums.size();
-        int pro = 1,mini = INT_MAX,maxi = INT_MIN;
-        for(int r=0;r<n;r++)
+        int pre = 1;
+        int suff = 1;
+        int ans = 0,maxi = INT_MIN;
+        for(int i=0;i<n;i++)
         {
-            pro *= nums[r];
-            mini = min(pro,mini);
-            maxi = max(pro,maxi);
+            if(pre==0)
+            {
+                pre = 1;
+            }
+            if(suff==0)
+            {
+                suff = 1;
+            }
+            pre = pre*nums[i];
+            suff = suff*nums[n-i-1];
+            ans = max(pre,suff);
+            maxi = max(ans,maxi);
         }
-        return max(mini,maxi);
+        return maxi;
     }
 };
